@@ -1,0 +1,57 @@
+# The name of the Openstack external network. This blueprint creates a floating IP for the management network
+floating_network_id: public
+
+# NTP servers
+ntp1: 0.pool.ntp.org
+ntp2: 1.pool.ntp.org
+
+# Timezone options: https://support.f5.com/csp/article/K9098
+timezone: UTC
+
+# DNS nameservers
+ns1: 8.8.8.8
+ns2: 8.8.4.4
+
+# This is used if you are using a BIG-IQ to license BIG-IP instances
+big_iq_host: 192.168.121.60
+# The name of the BIG-IQ license pool as configured on BIG-IQ
+big_iq_lic_pool: jamespool
+
+# The names of the Openstack networks and their subnets that we will attach to
+client_net: EXTnet
+client_subnet: EXTsub
+server_net: INTnet
+server_subnet: INTsub
+mgmt_net: cfy-network
+mgmt_subnet: cfy-subnet
+mgmt_sg_name: mgmt_sg
+
+# The name of the Openstack ssh keypair to attach to the BIG-IP
+key_name: OSlabkeypair
+
+# The Openstack flavor to use for the BIG-IP VE
+flavor: m2.xlarge
+# The Openstack image name to use for the BIG-IP VE
+image_name: BIGIP-15.1.2.1-0.0.10.ALL.qcow2
+
+
+# BIG-IP networking configuration
+# static management ip only.  This should be from the IP range of the Openstack subnet
+mgmt_net_ip: 192.168.121.113
+# Client IP address
+client_net_ip: 10.101.10.151/24
+client_net_cidr: "/24"
+server_net_ip: 10.102.10.151/24
+server_net_cidr: "/24"
+
+# We set this mtu to reduce issues with Openstack underlay networking 
+mtu: 1450
+
+# Default Gateway of the dataplane traffic vlans
+tmm_def_gw: 10.101.10.1
+
+
+# These are used to build a base configuration with F5 AS3. This is provided as an example
+vs_virtualAddress: 10.10.11.100
+vs_virtualPort: 80
+
