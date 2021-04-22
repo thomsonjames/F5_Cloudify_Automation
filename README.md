@@ -4,8 +4,8 @@ Summary:
 This method of deploying BIG-IP’s into Cloudify will take advantage of as much F5 supported Automation Toolchain components as possible.  While this exercise focuses on creating a cloudify blueprint to deploy BIG-IP, the F5 Automation Toolchain features can be used with other automation tools as well.
 
 The two main features that will be used for Device Onboarding are:
-1)	[F5 Cloud-Init] (https://clouddocs.f5.com/cloud/public/v1/shared/cloudinit.html), utilizing the tmos_declared module
-2)	[F5 Automation Toolchain’s] (https://clouddocs.f5.com/)  [Declarative Onboarding] (https://clouddocs.f5.com/products/extensions/f5-declarative-onboarding/latest/)
+1)	[F5 Cloud-Init](https://clouddocs.f5.com/cloud/public/v1/shared/cloudinit.html), utilizing the tmos_declared module
+2)	[F5 Automation Toolchain’s](https://clouddocs.f5.com/)  [Declarative Onboarding](https://clouddocs.f5.com/products/extensions/f5-declarative-onboarding/latest/)
 
 You have the option of also using the Application Services 3 (AS3) module to configure virtual servers in addition to streaming Telemetry to a number of endpoints using F5’s Telemetry Streaming module. 
 
